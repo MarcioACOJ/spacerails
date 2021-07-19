@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Powers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @powers.each do |power| %>
+      <tr>
+        <td><%= power.name %></td>
+        <td><%= link_to 'Show', power %></td>
+        <td><%= link_to 'Edit', edit_power_path(power) %></td>
+        <td><%= link_to 'Destroy', power, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Power', new_power_path %>
